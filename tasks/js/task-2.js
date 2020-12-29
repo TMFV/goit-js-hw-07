@@ -9,9 +9,11 @@ const ingredients = [
 ];
 
 for (let i = 0; i < ingredients.length; i += 1) {
-    const newElement = document.createElement('li');
-    newElement.textContent = ingredients[i];
-    const refParrentEl = document.querySelector('ul#ingredients');
-    refParrentEl.appendChild(newElement);
-    console.log(newElement);
+  //const newElement = document.createElement('li');
+  const newElement = '';
+    //newElement.textContent = ingredients[i];
+  newElement += `<li>${ingredients[i]}</li>`;
 };
+const refParrentEl = document.querySelector('ul#ingredients');
+    refParrentEl.innerHTML = newElement;
+    console.log(newElement);
