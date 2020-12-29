@@ -16,8 +16,10 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
-
-for (let i = 0; i < images.length; i += 1) {
-    const refGallery = document.querySelector('ul#gallery');
-    const newImage = refGallery.insertAdjacentHTML('beforeend', `<li class="list-style"><img class="image-style" src="${images[i].url} alt="${images[i].alt}"></img></li>`);
-};
+const refGallery = document.querySelector('ul#gallery');
+let stringForHtml;
+let imgArray = images.forEach(image => {
+  stringForHtml += `<li class="list-style"><img class="image-style" src="${image.url} alt="${image.alt}"></img></li>`;
+  return stringForHtml;
+});
+refGallery.insertAdjacentHTML('beforeend', stringForHtml);
